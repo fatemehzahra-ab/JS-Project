@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneaker Store</title>
+  </head>
+  <body class="w-full max-w-[428px] h-[100dvh] font-inter overflow-hidden">
+    <header class="w-full h-[56px]">
+      <div class="pt-[12px] pl-[24px]">
+        <img src="svgs/icon-back.svg" alt="icon-back" />
+      </div>
+    </header>
+    <main class="flex flex-col text-center">
+      <div class="logo w-[54px] max-h-[81px] mt-[76px] mx-auto">
+        <img src="svgs/icon-logo.svg" alt="icon-logo" />
+      </div>
+      <h1 class="font-[600px] text-[32px]/[100%] text-[#152536] mt-[118px]">
+        Signup to Your Account
+      </h1>
+      <form method="get" id="login-form">
+        <div class="relative w-full max-w-[380px] mt-[48px] ml-[20px]">
+          <svg
+            id="icon"
+            class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[#000000] transition-colors"
+            width="14"
+            height="15"
+            fill="currentColor"
+            viewBox="0 0 14 15"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.04375 3.61063C0.131966 3.22409 0.348823 2.87896 0.658806 2.63177C0.968789 2.38458 1.35352 2.24997 1.75 2.25H12.25C12.6465 2.24997 13.0312 2.38458 13.3412 2.63177C13.6512 2.87896 13.868 3.22409 13.9563 3.61063L7 7.86225L0.04375 3.61063ZM0 4.60987V10.8259L5.07762 7.71263L0 4.60987ZM5.91587 8.22625L0.167125 11.7499C0.309161 12.0494 0.533336 12.3024 0.813559 12.4794C1.09378 12.6565 1.41853 12.7503 1.75 12.75H12.25C12.5814 12.7501 12.906 12.656 13.1861 12.4788C13.4662 12.3016 13.6902 12.0485 13.832 11.749L8.08325 8.22538L7 8.88775L5.91587 8.22538V8.22625ZM8.92237 7.7135L14 10.8259V4.60987L8.92237 7.71263V7.7135Z"
+            />
+          </svg>
+
+          <input
+            type="text"
+            id="username"
+            class="w-full h-[37px] pl-10 pr-3 py-[8px] bg-[#FAFAFA] rounded-sm border border-transparent focus:border-[#000000] focus:outline-none focus:ring-0"
+            placeholder="Username"
+            onfocus="document.getElementById('icon').style.color = '#000000'"
+            onblur="document.getElementById('icon').style.color = '#6C757D'"
+          />
+        </div>
+        <p
+          id="username-err"
+          class="text-red-500 text-xs font-semibold mt-1 hidden"
+        ></p>
+        <div class="relative w-full max-w-[380px] mt-[24px] group ml-[20px]">
+          <svg
+            class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[#000000] transition-colors"
+            width="14"
+            height="15"
+            fill="currentColor"
+            viewBox="0 0 14 15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.1875 8.375C2.1875 7.91087 2.37187 7.46575 2.70006 7.13756C3.02825 6.80937 3.47337 6.625 3.9375 6.625H10.0625C10.5266 6.625 10.9717 6.80937 11.2999 7.13756C11.6281 7.46575 11.8125 7.91087 11.8125 8.375V12.75C11.8125 13.2141 11.6281 13.6592 11.2999 13.9874C10.9717 14.3156 10.5266 14.5 10.0625 14.5H3.9375C3.47337 14.5 3.02825 14.3156 2.70006 13.9874C2.37187 13.6592 2.1875 13.2141 2.1875 12.75V8.375Z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3.9375 4C3.9375 3.18777 4.26016 2.40882 4.83449 1.83449C5.40882 1.26016 6.18777 0.9375 7 0.9375C7.81223 0.9375 8.59118 1.26016 9.16551 1.83449C9.73984 2.40882 10.0625 3.18777 10.0625 4V6.625H9.1875V4C9.1875 3.41984 8.95703 2.86344 8.5468 2.4532C8.13656 2.04297 7.58016 1.8125 7 1.8125C6.41984 1.8125 5.86344 2.04297 5.4532 2.4532C5.04297 2.86344 4.8125 3.41984 4.8125 4V6.625H3.9375V4Z"
+            />
+          </svg>
+
+          <input
+            id="password"
+            type="password"
+            class="w-full h-[37px] pl-10 pr-10 py-[8px] bg-[#FAFAFA] rounded-sm border border-transparent focus:border-[#000000] focus:outline-none focus:ring-0"
+            placeholder="Password"
+          />
+
+          <button
+            type="button"
+            id="togglePassword"
+            aria-label="Toggle password visibility"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[#000000] transition-colors"
+          >
+            <svg
+              width="16"
+              height="17"
+              fill="currentColor"
+              viewBox="0 0 16 17"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                width="16"
+                height="16"
+                transform="translate(0 0.5)"
+                fill="white"
+                fill-opacity="0.01"
+              />
+              <path
+                d="M10.4412 12.798L9.029 11.3849C8.48286 11.5801 7.8925 11.6163 7.32662 11.4891C6.76073 11.362 6.24259 11.0768 5.83247 10.6667C5.42235 10.2565 5.13712 9.73839 5.00998 9.17251C4.88283 8.60662 4.91899 8.01626 5.11425 7.47012L3.31175 5.66762C1.82075 6.99325 1 8.5 1 8.5C1 8.5 3.625 13.3125 8 13.3125C8.84035 13.3096 9.6712 13.1345 10.4412 12.798ZM5.55875 4.202C6.3288 3.8655 7.15964 3.69039 8 3.6875C12.375 3.6875 15 8.5 15 8.5C15 8.5 14.1784 10.0059 12.6891 11.3333L10.8849 9.529C11.0801 8.98286 11.1163 8.3925 10.9891 7.82662C10.862 7.26073 10.5768 6.74258 10.1667 6.33247C9.75654 5.92235 9.23839 5.63712 8.67251 5.50998C8.10662 5.38283 7.51626 5.41899 6.97013 5.61425L5.55875 4.20288V4.202Z"
+              />
+              <path
+                d="M5.83457 8.19022C5.78644 8.52649 5.81728 8.86935 5.92466 9.19163C6.03204 9.51391 6.213 9.80676 6.4532 10.047C6.69341 10.2872 6.98625 10.4681 7.30853 10.5755C7.63081 10.6829 7.97367 10.7137 8.30994 10.6656L5.83369 8.19022H5.83457ZM10.1658 8.80972L7.69044 6.33347C8.02672 6.28534 8.36958 6.31618 8.69186 6.42356C9.01414 6.53094 9.30698 6.7119 9.54719 6.95211C9.78739 7.19231 9.96835 7.48515 10.0757 7.80743C10.1831 8.12971 10.214 8.47257 10.1658 8.80885V8.80972Z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.9404 14.0598L2.44043 3.55981L3.05993 2.94031L13.5599 13.4403L12.9404 14.0598Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <p
+          id="password-err"
+          class="text-red-500 text-xs font-semibold mt-1 hidden"
+        ></p>
+        <p
+          id="system-err"
+          class="text-red-500 text-xs font-semibold mt-1 text-center hidden"
+        ></p>
+        <a href="login.html" class="mt-[27px] block">Login</a>
+
+        <button
+          type="submit"
+          id="submitBtn"
+          class="mt-[286px] mb-[30px] bg-[#212529] w-full max-w-[380px] h-[47px] opacity-65 rounded-[30px] text-[#FFFFFF] font-[500]"
+        >
+          Signup
+        </button>
+      </form>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

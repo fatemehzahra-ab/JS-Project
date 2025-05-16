@@ -1,5 +1,5 @@
-import { generateHttpClient } from "./client";
 import { urls } from "./urls";
+import { generateHttpClient } from "./client";
 
 export const login = async (body) => {
   if (!body.username) throw new Error("Username is required");

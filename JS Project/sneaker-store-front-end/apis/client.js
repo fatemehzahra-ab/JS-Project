@@ -6,6 +6,6 @@ import { tokenName } from "./constants";
 export const generateHttpClient = () => {
   return axios.create({
     baseURL: baseUrl,
-    headers: { Authorization: localStorage.getItem(tokenName) },
+    headers: { Authorization: `Bearer ${localStorage.getItem(tokenName)}` },
   });
 };

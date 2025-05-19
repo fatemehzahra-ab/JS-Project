@@ -1,5 +1,6 @@
 import "./style.css";
 import { signup } from "../apis/auth";
+import { tokenName } from "../apis/constants";
 
 const togglePassword = document.getElementById("togglePassword");
 const password = document.getElementById("password");
@@ -57,8 +58,7 @@ document.querySelector("form").addEventListener("submit", async (event) => {
   const data = { username: usernameValue, password: passwordValue };
   try {
     const resBody = await signup(data);
-
-    localStorage.setItem("token", resBody.token);
+    localStorage.setItem(tokenName, resBody.token);
     location.href = "/home";
   } catch (error) {
     const msg = error.response?.data?.message;

@@ -6,66 +6,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sneaker store</title>
   </head>
-  <body class="max-w-[428px] font-inter">
-    <header class="flex justify-between w-full max-w-[428px] max-h-[80px]">
-      <div class="header py-[16px] pl-[24px]">
-        <p class="font-[500px] text-[16px] text-[#757475]">Good Morning 👋</p>
-        <span
-          id="username-placeholder"
-          class="text-[#152536] font-bold mt-[10px]"
-          >Unknown</span
-        >
-      </div>
-      <div class="bell-heart flex pr-[24px] pt-[31px]">
-        <img
-          src="svgs/home-bell.svg"
-          alt="bell icon"
-          class="w-[24px] h-[22.07px] mr-[16px]"
-        />
-        <img
-          src="svgs/home-heart.svg"
-          alt="heart icon"
-          class="w-[24px] h-[24px]"
-        />
-      </div>
-    </header>
-    <div class="searchbox relative w-full max-w-[380px] mt-[8px] mx-[24px]">
-      <svg
-        width="16"
-        height="17"
-        viewBox="0 0 16 17"
-        class="absolute left-3 top-1/2 -translate-y-1/2 w-[16px] h-[16px] text-[#6C757D] group-focus-within:text-[#000000] transition-colors"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g clip-path="url(#clip0_1_2387)">
-          <path
-            d="M11.742 10.844C12.7103 9.52267 13.144 7.88447 12.9563 6.25713C12.7687 4.62979 11.9735 3.13332 10.7298 2.06711C9.48616 1.0009 7.88579 0.443582 6.24888 0.506655C4.61197 0.569728 3.05923 1.24854 1.90131 2.40729C0.743395 3.56603 0.0656939 5.11926 0.00379204 6.75621C-0.0581098 8.39317 0.500353 9.99314 1.56745 11.236C2.63455 12.4789 4.13159 13.273 5.75906 13.4596C7.38654 13.6461 9.02442 13.2112 10.345 12.242H10.344C10.374 12.282 10.406 12.32 10.442 12.357L14.292 16.207C14.4796 16.3946 14.7339 16.5001 14.9992 16.5002C15.2645 16.5003 15.5189 16.395 15.7065 16.2075C15.8942 16.02 15.9997 15.7656 15.9997 15.5003C15.9998 15.2351 15.8946 14.9806 15.707 14.793L11.857 10.943C11.8213 10.9068 11.7828 10.8734 11.742 10.843V10.844ZM12 6.99998C12 7.72225 11.8578 8.43745 11.5814 9.10474C11.305 9.77203 10.8999 10.3783 10.3891 10.8891C9.87841 11.3998 9.27209 11.8049 8.6048 12.0813C7.93751 12.3577 7.22231 12.5 6.50004 12.5C5.77777 12.5 5.06258 12.3577 4.39528 12.0813C3.72799 11.8049 3.12168 11.3998 2.61096 10.8891C2.10023 10.3783 1.69511 9.77203 1.41871 9.10474C1.14231 8.43745 1.00004 7.72225 1.00004 6.99998C1.00004 5.54129 1.57951 4.14234 2.61096 3.11089C3.64241 2.07944 5.04135 1.49998 6.50004 1.49998C7.95873 1.49998 9.35768 2.07944 10.3891 3.11089C11.4206 4.14234 12 5.54129 12 6.99998Z"
-            fill="#6C757D"
+  <body class="font-inter">
+    <div class="w-full max-w-[428px] mx-auto">
+      <header class="flex justify-between w-full max-w-[428px] max-h-[80px]">
+        <div class="header py-[16px] pl-[24px]">
+          <p class="font-[500px] text-[16px] text-[#757475] greeting"></p>
+          <span
+            id="username-placeholder"
+            class="text-[#152536] font-bold mt-[10px]"
+            >Unknown</span
+          >
+        </div>
+        <div class="bell-heart flex pr-[24px] pt-[31px]">
+          <img
+            src="svgs/home-bell.svg"
+            alt="bell icon"
+            class="w-[24px] h-[22.07px] mr-[16px]"
           />
-        </g>
-        <defs>
-          <clipPath id="clip0_1_2387">
-            <rect
-              width="16"
-              height="16"
-              fill="white"
-              transform="translate(0 0.5)"
+          <img
+            src="svgs/home-heart.svg"
+            alt="heart icon"
+            class="w-[24px] h-[24px]"
+          />
+        </div>
+      </header>
+      <div class="searchbox relative w-full max-w-[380px] mt-[8px] mx-[24px]">
+        <svg
+          width="16"
+          height="17"
+          viewBox="0 0 16 17"
+          class="absolute left-3 top-1/2 -translate-y-1/2 w-[16px] h-[16px] text-[#6C757D] group-focus-within:text-[#000000] transition-colors"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_1_2387)">
+            <path
+              d="M11.742 10.844C12.7103 9.52267 13.144 7.88447 12.9563 6.25713C12.7687 4.62979 11.9735 3.13332 10.7298 2.06711C9.48616 1.0009 7.88579 0.443582 6.24888 0.506655C4.61197 0.569728 3.05923 1.24854 1.90131 2.40729C0.743395 3.56603 0.0656939 5.11926 0.00379204 6.75621C-0.0581098 8.39317 0.500353 9.99314 1.56745 11.236C2.63455 12.4789 4.13159 13.273 5.75906 13.4596C7.38654 13.6461 9.02442 13.2112 10.345 12.242H10.344C10.374 12.282 10.406 12.32 10.442 12.357L14.292 16.207C14.4796 16.3946 14.7339 16.5001 14.9992 16.5002C15.2645 16.5003 15.5189 16.395 15.7065 16.2075C15.8942 16.02 15.9997 15.7656 15.9997 15.5003C15.9998 15.2351 15.8946 14.9806 15.707 14.793L11.857 10.943C11.8213 10.9068 11.7828 10.8734 11.742 10.843V10.844ZM12 6.99998C12 7.72225 11.8578 8.43745 11.5814 9.10474C11.305 9.77203 10.8999 10.3783 10.3891 10.8891C9.87841 11.3998 9.27209 11.8049 8.6048 12.0813C7.93751 12.3577 7.22231 12.5 6.50004 12.5C5.77777 12.5 5.06258 12.3577 4.39528 12.0813C3.72799 11.8049 3.12168 11.3998 2.61096 10.8891C2.10023 10.3783 1.69511 9.77203 1.41871 9.10474C1.14231 8.43745 1.00004 7.72225 1.00004 6.99998C1.00004 5.54129 1.57951 4.14234 2.61096 3.11089C3.64241 2.07944 5.04135 1.49998 6.50004 1.49998C7.95873 1.49998 9.35768 2.07944 10.3891 3.11089C11.4206 4.14234 12 5.54129 12 6.99998Z"
+              fill="#6C757D"
             />
-          </clipPath>
-        </defs>
-      </svg>
+          </g>
+          <defs>
+            <clipPath id="clip0_1_2387">
+              <rect
+                width="16"
+                height="16"
+                fill="white"
+                transform="translate(0 0.5)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
 
-      <input
-        type="search"
-        name="searchbox"
-        id="searchbox"
-        class="text-[#BAB8BC] text-[14px] bg-[#FAFAFA] w-full h-[37px] pl-[34px] focus:text-[#000000] border border-transparent focus:border-[#000000] focus:outline-none"
-        placeholder="Search"
-      />
-    </div>
-    <div class="max-w-screen-[428px] mx-auto p-[24px]">
-      <div id="productGrid" class="grid grid-cols-2 gap-[16px]"></div>
+        <input
+          type="search"
+          name="searchbox"
+          id="searchbox"
+          class="text-[#BAB8BC] text-[14px] bg-[#FAFAFA] w-full h-[37px] pl-[34px] focus:text-[#000000] border border-transparent focus:border-[#000000] focus:outline-none"
+          placeholder="Search"
+        />
+      </div>
+      <div class="flex">
+        <p class="text-[#152536] font-semibold text-[20px] ml-[24px] mt-[30px]">
+          Most Popular
+        </p>
+        <p
+          class="text-[#152536] font-semibold text-[16px] mt-[33px] ml-[195px] cursor-pointer"
+        >
+          See All
+        </p>
+      </div>
+      <div
+        class="flex gap-[12px] overflow-x-auto whitespace-nowrap scrollbar-hidden ml-[24px]"
+      >
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] hover:bg-[#343A40] hover:text-white border-2 rounded-[25px] font-semibold px-5"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] rounded-[25px] font-semibold px-5 border-2 hover:bg-[#343A40] hover:text-white"
+        >
+          Nike
+        </button>
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] rounded-[25px] font-semibold border-2 px-5 hover:bg-[#343A40] hover:text-white"
+        >
+          ADIDAS
+        </button>
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] rounded-[25px] font-semibold border-2 px-5 hover:bg-[#343A40] hover:text-white"
+        >
+          PUMA
+        </button>
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] rounded-[25px] font-semibold border-2 px-5 hover:bg-[#343A40] hover:text-white"
+        >
+          ASICS
+        </button>
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] rounded-[25px] font-semibold border-2 px-5 hover:bg-[#343A40] hover:text-white"
+        >
+          HUSHPUPPIES
+        </button>
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] rounded-[25px] font-semibold border-2 px-5 hover:bg-[#343A40] hover:text-white"
+        >
+          CONVERSE
+        </button>
+        <button
+          type="button"
+          class="cursor-pointer min-w-fit h-[39px] mt-[20px] rounded-[25px] font-semibold border-2 px-5 hover:bg-[#343A40] hover:text-white"
+        >
+          NEW BALANCE
+        </button>
+      </div>
+      <div class="max-w-[428px] mx-auto p-[24px]">
+        <div id="productGrid" class="grid grid-cols-2 gap-[16px]"></div>
+      </div>
     </div>
     <script type="module" src="src/home.js"></script>
   </body>

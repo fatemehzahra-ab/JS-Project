@@ -5,8 +5,7 @@ export const urls = {
     login: "/auth/login",
     signup: "/auth/signup",
   },
-  user: {
-    user: "/user",
-    delete: (id) => `/user/${id}`,
+  sneaker: {
+    list: "/sneaker",
   },
 };

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <div class="max-w-[428px] h-[100dvh] overflow-hidden">
+  <body class="max-w-[428px] h-[100dvh] overflow-hidden">
+    <div class="overflow-hidden">
       <header class="flex w-full my-10 mx-6">
         <img src="img/cart.png" class="w-10 h-10 mr-3" alt="" srcset="" />
         <h1 class="font-semibold text-2xl pt-1 mr-50">My Cart</h1>
@@ -36,6 +36,7 @@
           </defs>
         </svg>
       </header>
+      <div class="cartbox overflow-y-auto max-h-[100vh]" id="cartbox"></div>
       <footer class="w-[428px] fixed bottom-0">
         <div
           class="actionbar max-w-full h-[66px] items-center justify-around flex bg-white"

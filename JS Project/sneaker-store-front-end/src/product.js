@@ -129,7 +129,9 @@ const loadProduct = async () => {
         cart.push(cartItem);
       }
 
-      localStorage.setItem("cart", JSON.stringify(cart));
+      const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+      existingCart.push(cartItem);
+      localStorage.setItem("cart", JSON.stringify(existingCart));
 
       showMessage("Added to cart successfully!", "success");
     });

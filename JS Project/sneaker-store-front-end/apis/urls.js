@@ -7,5 +7,6 @@ export const urls = {
   },
   sneaker: {
     list: "/sneaker",
+    id: "/sneaker/item",
   },
 };

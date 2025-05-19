@@ -127,9 +127,49 @@
           NEW BALANCE
         </button>
       </div>
-      <div class="max-w-[428px] mx-auto p-[24px]">
-        <div id="productGrid" class="grid grid-cols-2 gap-[16px]"></div>
+      <div class="max-w-[428px] mx-auto p-[24px] relative">
+        <div
+          id="productGrid"
+          class="grid grid-cols-2 gap-[16px] absolute"
+        ></div>
       </div>
+      <footer class="w-[428px] fixed bottom-0">
+        <div
+          class="actionbar max-w-full h-[66px] items-center justify-around flex bg-white"
+        >
+          <img
+            class="w-[33px] h-[38px] cursor-pointer"
+            src="svgs/home-home.svg"
+            class="bottom-0 right-0"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="cursor-pointer"
+            src="svgs/home-cart.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="cursor-pointer"
+            src="svgs/home-orders.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="cursor-pointer"
+            src="svgs/home-wallet.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="cursor-pointer"
+            src="svgs/home-profile.svg"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </footer>
     </div>
     <script type="module" src="src/home.js"></script>
   </body>

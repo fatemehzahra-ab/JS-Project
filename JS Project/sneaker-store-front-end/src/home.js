@@ -17,7 +17,7 @@ usernamePlaceholder.innerText = username;
 
 const loadProducts = async () => {
   try {
-    const resBody = await fetchProducts({ page: 1, limit: 10 });
+    const resBody = await fetchProducts({ page: 1, limit: 100 });
     const products = resBody.data;
     productGrid.innerHTML = products
       .map(

@@ -7,6 +7,8 @@ const productNameElement = document.getElementById("productname");
 const productImageElement = document.getElementById("productimage");
 const sizeContainer = document.getElementById("size");
 const colorContainer = document.querySelectorAll("div.mt-4 > div.space-x-2")[1];
+const userCartList = document.getElementById("usercart");
+const messageBox = document.getElementById("messageBox");
 
 let selectedSize = null;
 let selectedColor = null;
@@ -77,6 +79,18 @@ const renderProduct = (data) => {
   updateTotalPrice();
 };
 
+const showMessage = (text, type = "error") => {
+  messageBox.textContent = text;
+  messageBox.className = `text-white p-2 rounded mt-4 ${
+    type === "error" ? "bg-red-500" : "bg-green-500"
+  }`;
+  messageBox.classList.remove("hidden");
+
+  setTimeout(() => {
+    messageBox.classList.add("hidden");
+  }, 3000);
+};
+
 const loadProduct = async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
@@ -85,6 +99,40 @@ const loadProduct = async () => {
   try {
     const productData = await fetchProductById(productId);
     renderProduct(productData);
+    userCartList.addEventListener("click", () => {
+      if (!selectedSize || !selectedColor) {
+        showMessage("Please select size and color!", "error");
+        return;
+      }
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const cartItem = {
+        id: product.id,
+        name: product.name,
+        imageURL: product.imageURL,
+        price: product.price,
+        size: selectedSize,
+        color: selectedColor,
+        quantity,
+      };
+      const existingIndex = cart.findIndex(
+        (item) =>
+          item.id === cartItem.id &&
+          item.size === cartItem.size &&
+          item.color === cartItem.color
+      );
+
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += quantity;
+      } else {
+        cart.push(cartItem);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      showMessage("Added to cart successfully!", "success");
+    });
   } catch (err) {
     document.getElementById(
       "product-detail"

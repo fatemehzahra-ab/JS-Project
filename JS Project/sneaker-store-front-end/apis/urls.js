@@ -9,4 +9,5 @@ export const urls = {
     list: "/sneaker",
     id: "/sneaker/item",
   },
+  user: {},
 };

@@ -5,7 +5,10 @@ const productGrid = document.getElementById("productGrid");
 const usernamePlaceholder = document.getElementById("username-placeholder");
 const greetingText = document.querySelector(".greeting");
 const searchInput = document.getElementById("searchbox");
+const logOutButton = document.getElementById("logout");
+
 let products = [];
+
 const hour = new Date().getHours();
 let greeting = "Good Morning";
 if (hour >= 12 && hour < 18) greeting = "Good Afternoon";

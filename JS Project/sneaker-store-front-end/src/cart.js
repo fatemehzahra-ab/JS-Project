@@ -29,4 +29,3 @@ if (cart.length === 0) {
     cartContainer.innerHTML += itemHTML;
   });
 }
-console.log(cart);

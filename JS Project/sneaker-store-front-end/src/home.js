@@ -4,7 +4,8 @@ import { fetchProducts } from "../apis/products";
 const productGrid = document.getElementById("productGrid");
 const usernamePlaceholder = document.getElementById("username-placeholder");
 const greetingText = document.querySelector(".greeting");
-
+const searchInput = document.getElementById("searchbox");
+let products = [];
 const hour = new Date().getHours();
 let greeting = "Good Morning";
 if (hour >= 12 && hour < 18) greeting = "Good Afternoon";
@@ -18,7 +19,8 @@ usernamePlaceholder.innerText = username;
 const loadProducts = async () => {
   try {
     const resBody = await fetchProducts({ page: 1, limit: 100 });
-    const products = resBody.data;
+    products = resBody.data;
+
     productGrid.innerHTML = products
       .map(
         (product) => `
@@ -37,6 +39,53 @@ const loadProducts = async () => {
         const productId = item.getAttribute("data-id");
         window.location.href = `/product.html?id=${productId}`;
       });
+    });
+
+    const head = document.querySelector(".showhead");
+    const originalHeadHTML = head.innerHTML;
+
+    searchInput.addEventListener("input", (e) => {
+      const value = e.target.value.toLowerCase();
+
+      if (!value) {
+        productItems.forEach((item) => {
+          item.classList.remove("hidden");
+          item.classList.add("block");
+        });
+        head.classList.remove("hidden");
+        head.innerHTML = originalHeadHTML;
+        return;
+      }
+      let matchCount = 0;
+
+      products.forEach((product, index) => {
+        const isVisible = product.name.toLowerCase().includes(value);
+        const item = document.querySelectorAll(".product-item")[index];
+
+        item.classList.toggle("hidden", !isVisible);
+        item.classList.toggle("block", isVisible);
+
+        if (isVisible) matchCount++;
+      });
+
+      if (value && matchCount > 0) {
+        head.classList.remove("hidden");
+        head.innerHTML = `
+          <div class="flex justify-between">
+            <p class="text-[#152536] font-semibold text-[20px] ml-[24px] mt-[30px] ">
+              Results for "${value}"
+            </p>
+            <p class="text-[#152536] font-semibold text-[16px] mt-[33px] mr-[20px]">
+            ${matchCount} found${matchCount > 1 ? "s" : ""}
+            </p>
+          </div>
+        `;
+      } else {
+        head.classList.remove("hidden");
+        head.innerHTML = `
+          <img src="img/Not Found copy.png" class="w-[300px] mx-auto my-[150px]"/>
+        `;
+      }
     });
   } catch (err) {
     productGrid.innerHTML = `<p class="text-red-600">error: ${err.message}</p>`;

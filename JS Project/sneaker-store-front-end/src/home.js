@@ -1,5 +1,6 @@
 import "./style.css";
 import { fetchProducts } from "../apis/products";
+import { logout } from "../apis/auth";
 
 const productGrid = document.getElementById("productGrid");
 const usernamePlaceholder = document.getElementById("username-placeholder");
@@ -18,6 +19,8 @@ greetingText.innerText = `${greeting} 👋`;
 
 const username = localStorage.getItem("username") || "User";
 usernamePlaceholder.innerText = username;
+
+logOutButton.addEventListener("click", logout);
 
 const loadProducts = async () => {
   try {

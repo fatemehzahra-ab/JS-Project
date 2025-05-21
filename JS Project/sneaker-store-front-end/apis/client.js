@@ -4,8 +4,17 @@ import { baseUrl } from "./urls";
 import { tokenName } from "./constants";
 
 export const generateHttpClient = () => {
-  return axios.create({
+  const client = axios.create({
     baseURL: baseUrl,
-    headers: { Authorization: `Bearer ${localStorage.getItem(tokenName)}` },
   });
+
+  client.interceptors.request.use((config) => {
+    const token = localStorage.getItem(tokenName);
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });
+
+  return client;
 };

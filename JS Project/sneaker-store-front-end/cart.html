@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cart</title>
   </head>
   <body class="max-w-[428px] h-[100dvh] overflow-hidden">
-    <div class="overflow-hidden">
+    <div class="overflow-hidden bg-[#ffffff]">
       <header class="flex w-full my-10 mx-6">
-        <img src="img/cart.png" class="w-10 h-10 mr-3" alt="" srcset="" />
+        <img src="img/logo2.png" class="w-10 h-10 mr-3" alt="" srcset="" />
         <h1 class="font-semibold text-2xl pt-1 mr-50">My Cart</h1>
         <svg
           width="16"
@@ -36,18 +36,24 @@
           </defs>
         </svg>
       </header>
-      <div class="cartbox overflow-y-auto max-h-[100vh]" id="cartbox"></div>
-      <footer class="w-[428px] fixed bottom-0">
+      <div
+        id="cartbox"
+        class="cartbox overflow-y-auto bg-[#ffffff]"
+        style="max-height: calc(100vh - 180px); padding-bottom: 100px"
+      ></div>
+      <footer class="w-[428px] fixed bottom-0 bg-white rounded-t-4xl">
         <div
           class="checkout flex justify-between items-center rounded-t-4xl p-6 shadow-2xl shadow-black-900"
         >
-          <p class="text-[#757475] text">Total price</p>
-          <button
-            type="submit"
-            class="bg-black text-white w-[250px] h-[48px] border-none rounded-4xl"
+          <p class="text-[#757475] text">
+            Total price <span class="totalprice"></span>
+          </p>
+          <a
+            href="checkout.html"
+            class="bg-black flex items-center justify-center mt-2 font-medium text-white w-[250px] h-[48px] border-none rounded-4xl"
           >
             Check out
-          </button>
+          </a>
         </div>
         <div
           class="actionbar max-w-full h-[66px] items-center justify-around flex bg-white"

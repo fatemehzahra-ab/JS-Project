@@ -34,10 +34,18 @@ const renderProducts = (productsToRender) => {
   productGrid.innerHTML = productsToRender
     .map(
       (product) => `
-      <div class="product-item bg-white rounded-md flex flex-col justify-start text-sm cursor-pointer" data-id="${product.id}">
-        <img src="${product.imageURL}"  class="h-[182px] w-[182px] gap-5 mb-1  mx-auto rounded-[24px]" />
-        <h2 class="text-[#152536] font-bold text-[20px] h-[24px] mb-2 truncate">${product.name}</h2>
-        <p class="text-[16px] text-[#152536] font-semibold">$${product.price}</p>
+      <div class="product-item bg-white rounded-md flex flex-col justify-start text-sm cursor-pointer" data-id="${
+        product.id
+      }">
+        <img src="${
+          product.imageURL
+        }"  class="h-[182px] w-[182px] gap-5 mb-1  mx-auto rounded-[24px]" />
+        <h2 class="text-[#152536] font-bold text-[20px] h-[24px] mb-2 truncate">${
+          product.name
+        }</h2>
+        <p class="text-[16px] text-[#152536] font-semibold">$${product.price.toFixed(
+          2
+        )}</p>
       </div>
     `
     )
